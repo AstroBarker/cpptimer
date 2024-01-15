@@ -2,11 +2,11 @@
 #define _TIMER_HPP_
 
 /**
- * File     :  Timer.hpp
+ * File     :  timer.hpp
  * --------------
  *
  * Author   : Brandon L. Barker
- *   Inspiration from of https://gist.github.com/mcleary/b0bf4fa88830ff7c882d
+ *   Inspiration from https://gist.github.com/mcleary/b0bf4fa88830ff7c882d
  * Purpose  : Simple timer class
  **/
 
@@ -15,26 +15,26 @@
 class Timer {
  public:
   void start( ) {
-    m_StartTime = std::chrono::steady_clock::now( );
-    m_bRunning  = true;
+    chrono_start = std::chrono::steady_clock::now( );
+    running  = true;
   }
   void stop( ) {
-    m_EndTime  = std::chrono::steady_clock::now( );
-    m_bRunning = false;
+    chrono_end  = std::chrono::steady_clock::now( );
+    running = false;
   }
 
   double elapsedNanoseconds( ) {
     std::chrono::time_point<std::chrono::steady_clock> endTime;
 
     // if we haven't stopped the timer, use current time
-    if ( m_bRunning ) {
+    if ( running ) {
       endTime = std::chrono::steady_clock::now( );
     } else {
-      endTime = m_EndTime;
+      endTime = chrono_end;
     }
 
     return std::chrono::duration_cast<std::chrono::nanoseconds>( endTime -
-                                                                  m_StartTime )
+                                                                  chrono_start )
         .count( );
   }
 
@@ -47,9 +47,9 @@ class Timer {
   double elapsedHours( ) { return elapsedMinutes( ) / 60.0; }
 
  private:
-  std::chrono::time_point<std::chrono::steady_clock> m_StartTime;
-  std::chrono::time_point<std::chrono::steady_clock> m_EndTime;
-  bool m_bRunning = false;
+  std::chrono::time_point<std::chrono::steady_clock> chrono_start;
+  std::chrono::time_point<std::chrono::steady_clock> chrono_end;
+  bool running = false;
 };
 
 #endif // _TIMER_HPP_

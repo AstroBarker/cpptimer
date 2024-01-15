@@ -7,6 +7,8 @@ Simply include the header, then you can, e.g.,
 ```
 #incldue "timer.h"
 
+// ...
+
 Timer timer;
 timer.start();
 // cool computations

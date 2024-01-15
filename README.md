@@ -5,7 +5,7 @@ Simple header only timer for C++ applications using [std::chrono](https://cplusp
 Simply include the header, then you can, e.g.,
 
 ```
-#incldue "timer.h"
+#incldue "timer.hpp"
 
 // ...
 

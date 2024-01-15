@@ -14,6 +14,8 @@ timer.start();
 // cool computations
 timer.stop();
 std::printf("Blazing fast calculation took %e ms \n", timer.ellapsedNanoseconds);
+
+// ...
 ```
 
 Support for nanoseconds, microseconds, milliseconds, seconds, minutes, and hours.

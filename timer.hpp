@@ -39,7 +39,7 @@ class Timer {
   }
 
 
-  /* support microseconds up to hours (days+ requires C++20) */
+  /* support nanoseconds up to hours (days+ requires C++20) */
   double elapsedMicroseconds( ) { return elapsedNanoseconds( ) / 1.0e3; }
   double elapsedMilliseconds( ) { return elapsedNanoseconds( ) / 1.0e6; }
   double elapsedSeconds( ) { return elapsedNanoseconds( ) / 1.0e9; }

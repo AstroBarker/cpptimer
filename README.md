@@ -13,7 +13,7 @@ Timer timer;
 timer.start();
 // cool computations
 timer.stop();
-std::printf("Blazing fast calculation took %e ms \n", timer.ellapsedNanoseconds);
+std::printf("Blazing fast calculation took %e ns \n", timer.ellapsedNanoseconds);
 
 // ...
 ```
